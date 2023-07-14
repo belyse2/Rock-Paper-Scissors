@@ -31,6 +31,9 @@ function playRound(playerSelection, computerSelection) {
   
     for (var round = 1; round <= 5; round++) {
       var playerSelection = prompt("Enter your choice (rock, paper, or scissors):");
+      while (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
+        playerSelection = prompt("Invalid input. Please enter either rock, paper, or scissors:");
+      }
       var computerSelection = getRandomComputerSelection();
       
       var result = playRound(playerSelection, computerSelection);
