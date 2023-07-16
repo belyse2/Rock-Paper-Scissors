@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <!-- <div class="display"></div>
+        <div class="controls"></div> -->
+    </div>
+
+    <h1>hello Javascript</h1>
+    <button id="btn">Click me!</button>
+    <button id="btna">Click me Too</button>
+    <button onclick="alertFunction()">Click me Baby</button>
+    <div id="button">
+        <button id="1">Click Me</button>
+        <button id="2">Click Me</button>
+        <button id="3">Click Me</button>
+
+    </div>
+
+    <!-- <script src="game.js"></script> -->
+    <script>
+        const container=document.querySelector('#container');
+
+        const content = document.createElement('div');
+        content.classList.add('content');
+        content.textContent = 'this is the DOM exercises in java script';
+
+        container.appendChild(content);
+
+        const btn=document.querySelector('#btn');
+        btn.onclick =()=>alert("hello world");
+
+        const btna=document.querySelector('#btna');
+        btna.addEventListener('click',()=>{
+            alert("Hello world this is the second button ");
+        });
+
+        function alertFunction(){
+            alert("hello Baby Girl");
+        }
+        btna.onclick=alertFunction;
+
+        btna.addEventListener('click',alertFunction);
+
+        btn.addEventListener('click',function(e){
+            console.log(e.target);
+            e.target.style.background = 'blue';
+        });
+        
+        const buttons=document.querySelector('#button');
+
+        buttons.forEach((button) =>{
+            button.addEventListener('click',()=>{
+                alert(button.id);
+                alert("button.id");
+            })
+        })
+
+    </script>
+</body>
+</html>
